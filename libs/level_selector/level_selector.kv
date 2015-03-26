@@ -1,0 +1,34 @@
+#:kivy 1.8.0
+<LevelSelector>:
+    cols: 1
+
+    BoxLayout:
+        id: top_of_screen_buttons
+        size_hint_y: None
+        height: 80
+        spacing: (150, 0)
+        orientation: 'horizontal'
+
+        Button:
+            size_hint_x: .2
+
+            on_press: root.back_callback() 
+
+            background_color: (0,0,0,0)
+            canvas:
+                Rectangle:
+                    texture: root.get_back_texture()
+                    pos: self.x+(self.width/2.0)-48, self.y+(self.height/2.0)-48
+                    size: 96,96
+
+
+        Label:
+            background_color: (0,0,0,0)
+            canvas:
+                Rectangle:
+                    texture: root.get_levels_texture()
+                    pos: self.x+(self.width/2.0)-48, self.y+(self.height/2.0)-48
+                    size: 96,96
+
+
+
